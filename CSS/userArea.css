@@ -1,0 +1,77 @@
+#userArea{
+    background-color: #1a1a19;
+    border-radius: 10px;
+
+    width: 350px;
+    max-height: 300px;
+
+    margin-top: 15px;
+    margin-left: 15px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 10px;
+}
+#noUser{
+    font-size: small;
+    color: #8a8782;
+}
+
+.userBox{
+    width: 320px;
+    height: 70px;
+
+    border-radius: 10px;
+
+    background-color: #20222e;
+
+    display: flex;
+    flex-direction: row;
+
+    padding-left: 10px;
+
+    gap: 10px;
+}
+
+.userProfile{
+    width: 60px;
+    height: 60px;
+
+    border-radius: 40px;
+
+    background-color: rgb(24, 24, 42);
+    color: dodgerblue;
+
+    font-size: 25px;
+    font-weight: 500;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+
+    margin-top: 5px;
+}
+
+.userNameEmail{
+    display: flex;
+    flex-direction: column;
+
+}
+.userName{
+    margin-bottom: 0px;
+}
+.userEmail{
+    margin-top: 0px;
+
+    font-size: small;
+    color: #86868c;
+}
+
