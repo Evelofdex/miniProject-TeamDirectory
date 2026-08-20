@@ -2,8 +2,12 @@
     background-color: #1a1a19;
     border-radius: 10px;
 
-    width: 350px;
-    max-height: 300px;
+    width: 360px;
+    max-height: 225px;
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+    scrollbar-color: grey transparent;
 
     margin-top: 15px;
     margin-left: 15px;
@@ -32,6 +36,8 @@
 
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
     padding-left: 10px;
 
@@ -55,15 +61,12 @@
 
     align-items: center;
     justify-content: center;
-
-
-    margin-top: 5px;
 }
 
 .userNameEmail{
     display: flex;
     flex-direction: column;
-
+    justify-content: left;
 }
 .userName{
     margin-bottom: 0px;
@@ -73,5 +76,31 @@
 
     font-size: small;
     color: #86868c;
+}
+.userEmailInput{
+    background-color: transparent;
+    color: #86868c;
+
+    border-width: 0px;
+}
+
+.favoriteClickArea{
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.favoriteStar{
+    width: 20px;
+    height: 20px;
+
+    background-image: url("../svg/star_grey.svg");
+    background-size: 20px;
+    background-repeat: no-repeat;
 }
 

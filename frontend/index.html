@@ -3,6 +3,7 @@
         <title> Mini project - Team Directory </title>
         <link rel="stylesheet" href="./CSS/mainBox.css">
         <link rel="stylesheet" href="./CSS/userArea.css">
+        <script src="./script/addButtonBehavior.js" defer></script>
     </header>
     <head>
 
@@ -11,7 +12,7 @@
         <main>
             <div id="mainBox">
                 <p id="title"> Team Directory </p>
-                <p id="subtitle"> <span id="memberCounter"> x </span> member loaded </p>
+                <p id="subtitle"> <span id="memberCounter"> 0 </span> member loaded </p>
                 <div id="inputRow">
                     <input type="text" placeholder="Type here..." id="textInput">
                     <button id="searchButton"> Search </button>
@@ -23,24 +24,24 @@
                     <!-- <p id="noUser"> No member yet.. </p> -->
 
                     <!-- expected if theres user -->
-                     <div class="userBox">
-
-                     </div>
-                     <div class="userBox">
+                    <div class="userBox">
                         <div class="userProfile"> 
                             <p class="profileText"> EX </p>
                         </div>
                         <div class="userNameEmail">
                             <p class="userName"> Someone Example </p>
+                            <!-- first user input -->
+                            <!-- <input type="text" class="userEmailInput"> -->
                             <p class="userEmail"> Someone@Example.com </p>
                         </div>
-                        <div class="favoriteArea">
-
+                        <div class="favoriteClickArea">
+                            <div class="favoriteStar"> </div>
                         </div>
                      </div>
+                     <!----------------------------------->
 
                 </div>
-                <p id="favoriteTitle"> <span id="favoriteCounter"> x </span> favorited </p>
+                <p id="favoriteTitle"> <span id="favoriteCounter"> 0 </span> favorited </p>
             </div>
         </main>
     </body>
