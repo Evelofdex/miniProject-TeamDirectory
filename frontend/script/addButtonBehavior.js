@@ -1,13 +1,6 @@
-//elemeents
-let userArea = document.getElementById("userArea");
-let addButton = document.getElementById("addButton");
-let textInput = document.getElementById("textInput");
-let noUser = document.getElementById("noUser");
-
-
 addButton.addEventListener("click", () => {
 
-    if (noUser){ //just in case if the thing still exist, it will now cease to exist
+    if (noUser){ //just in case if the thing still exist, it will now cease to exist when adding
         noUser.remove();
     }
 
@@ -72,5 +65,7 @@ addButton.addEventListener("click", () => {
 
     textInput.value = "";
 })
+
+
 
 
