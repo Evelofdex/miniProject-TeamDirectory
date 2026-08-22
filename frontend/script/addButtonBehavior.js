@@ -1,4 +1,7 @@
-addButton.addEventListener("click", () => {
+addButton.addEventListener("click", async () => {
+
+    let inputNewData = [];
+    inputNewData.name = textInput.value;
 
     if (noUser){ //just in case if the thing still exist, it will now cease to exist when adding
         noUser.remove();
@@ -40,12 +43,17 @@ addButton.addEventListener("click", () => {
     newInputText_userEmailInput.type = "text";
     newDiv_userNameEmail.appendChild(newInputText_userEmailInput);
     newInputText_userEmailInput.focus();
+    let emailInput = false;
     newInputText_userEmailInput.addEventListener("keydown", (event) => {
         if (event.key === "Enter"){
             let newP_userEmail = document.createElement("p");
             newP_userEmail.className = "userEmail";
             newP_userEmail.innerText = newInputText_userEmailInput.value;
             newDiv_userNameEmail.appendChild(newP_userEmail);
+
+            inputNewData.email = newInputText_userEmailInput.value;
+            emailInput = true;
+
             newInputText_userEmailInput.remove(); //delete it after
         }
     })
@@ -61,11 +69,19 @@ addButton.addEventListener("click", () => {
         newDiv_favoriteStar.classList.toggle("isFavorite");
     })
 
+    inputNewData.isFavorite = false //temporary
 
+    if (emailInput){
+        //send it
+        await fetch("http://localhost:3000/users", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(inputNewData)
+        })
+    }
 
     textInput.value = "";
 })
-
 
 
 
