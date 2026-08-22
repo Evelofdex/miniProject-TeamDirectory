@@ -4,7 +4,7 @@ let addButton = document.getElementById("addButton");
 let textInput = document.getElementById("textInput");
 let memberCounter = document.getElementById("memberCounter");
 let favoriteCounter = document.getElementById("favoriteCounter");
-let searchButton = document.getElementById("searchButton");
+
 
 
 
