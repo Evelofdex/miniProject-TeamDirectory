@@ -4,12 +4,17 @@ const app = express();
 
 //checking, make one if its not there
 if (!fs.existsSync("./data/data.json")){
-    let data = []
+    let data = [{
+        name: "Someone Example",
+        email: "someone@example.com",
+        isFavorite: false,
+        id: 1
+    }]
     fs.writeFileSync("./data/data.json", JSON.stringify(data));
 } 
 
-app.get("/", (req, res) => {
-    console.log("pinged");
+app.get("/users", (req, res) => {
+    res.json(JSON.parse(fs.readFileSync("./data/data.json")))
 })
 
 app.listen(3000, () => {
