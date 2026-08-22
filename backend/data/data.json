@@ -1,1 +1,20 @@
-[{"name":"Someone Example","email":"someone@example.com","isFavorite":false,"id":1}]
+[
+    {
+        "name": "Someone Example",
+        "email": "someone@example.com",
+        "isFavorite": false,
+        "id": 1
+    },
+    {
+        "name": "Animos Sataru",
+        "email": "adawd@awindiw.com",
+        "isFavorite": false,
+        "id": 2
+    },
+    {
+        "name": "awondwa pawpdw",
+        "email": "awdawdpawdwad",
+        "isFavorite": false,
+        "id": 3
+    }
+]

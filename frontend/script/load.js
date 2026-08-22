@@ -3,6 +3,9 @@ let statusText = document.getElementById("statusText");
 
 
 window.addEventListener("load", async () => {
+
+    userArea.innerText = "";
+    
     console.log("loading data from local server...");
     memberCounter.innerText = "";
     statusText.innerText = "Fetching member data... "
@@ -23,6 +26,11 @@ window.addEventListener("load", async () => {
     } catch (error){
         console.log("server currently inactive")
         subtitle.innerText = "Server inactive, could not fetch member(s) data";
+        let newP_noUser = document.createElement("p");
+        let newText = document.createTextNode("No member yet...");
+        newP_noUser.id = "noUser";
+        newP_noUser.appendChild(newText);
+        userArea.appendChild(newP_noUser);
     }   
 })
 
