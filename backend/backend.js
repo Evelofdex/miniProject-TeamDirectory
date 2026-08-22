@@ -6,12 +6,7 @@ app.use(express.json());
 
 //checking, make one if its not there
 if (!fs.existsSync("./data/data.json")){
-    let data = [{
-        name: "Someone Example",
-        email: "someone@example.com",
-        isFavorite: false,
-        id: 1
-    }]
+    let data = [];
     fs.writeFileSync("./data/data.json", JSON.stringify(data));
 } 
 

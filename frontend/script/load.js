@@ -20,19 +20,25 @@ window.addEventListener("load", async () => {
             //if theres something, render it
             renderData(allData);
             console.log("rendering")
-        } 
+        }  else {
+            createNoUserText();
+        }
         statusText.innerText = "member loaded";
         memberCounter.innerText = allData.length;
     } catch (error){
         console.log("server currently inactive")
         subtitle.innerText = "Server inactive, could not fetch member(s) data";
-        let newP_noUser = document.createElement("p");
-        let newText = document.createTextNode("No member yet...");
-        newP_noUser.id = "noUser";
-        newP_noUser.appendChild(newText);
-        userArea.appendChild(newP_noUser);
+        createNoUserText();
     }   
 })
+
+function createNoUserText(){
+    let newP_noUser = document.createElement("p");
+    let newText = document.createTextNode("No member yet...");
+    newP_noUser.id = "noUser";
+    newP_noUser.appendChild(newText);
+    userArea.appendChild(newP_noUser); 
+}
 
 function renderData(data){
     userArea.innerHTML = "";
