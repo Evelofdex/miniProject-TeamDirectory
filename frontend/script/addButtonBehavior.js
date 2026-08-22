@@ -1,12 +1,16 @@
-const { text } = require("body-parser");
-
 //elemeents
 let userArea = document.getElementById("userArea");
 let addButton = document.getElementById("addButton");
 let textInput = document.getElementById("textInput");
+let noUser = document.getElementById("noUser");
 
 
 addButton.addEventListener("click", () => {
+
+    if (noUser){ //just in case if the thing still exist, it will now cease to exist
+        noUser.remove();
+    }
+
     let newDiv_userBox = document.createElement("div");
     newDiv_userBox.className = "userBox";
     userArea.appendChild(newDiv_userBox);
@@ -19,15 +23,15 @@ addButton.addEventListener("click", () => {
     newP_profileText.className = "profileText";
     let isFoundSpace = false;
     //check for space
-    for (let i = 0; i < textInput.innerText; i++){
-        if (textInput.innerText.at(i) == " "){
-            newP_profileText.innerText = textInput.innerText.split(" ")[0][0] + textInput.innerText.split(" ")[1][0]
+    for (let i = 0; i < textInput.value.length; i++){
+        if (textInput.value.at(i) == " "){
+            newP_profileText.innerText = textInput.value.split(" ")[0][0] + textInput.value.split(" ")[1][0]
             isFoundSpace = true;
             break;
         }
     }
     if (!isFoundSpace){
-        newP_profileText.innerText = textInput.innerText.at(0);
+        newP_profileText.innerText = textInput.value.at(0);
     }
     newDiv_userProfile.appendChild(newP_profileText);
 
@@ -36,7 +40,7 @@ addButton.addEventListener("click", () => {
     newDiv_userBox.appendChild(newDiv_userNameEmail);
     let newP_userName = document.createElement("p");
     newP_userName.className = "userName";
-    newP_userName.innerText = textInput.innerText;
+    newP_userName.innerText = textInput.value;
     newDiv_userNameEmail.appendChild(newP_userName);
     let newInputText_userEmailInput = document.createElement("input"); //input first
     newInputText_userEmailInput.className = "userEmailInput";
@@ -55,10 +59,18 @@ addButton.addEventListener("click", () => {
 
     let newDiv_favoriteClickArea = document.createElement("div");
     newDiv_favoriteClickArea.className = "favoriteClickArea";
-    newDiv_favoriteClickArea.appendChild(newDiv_userBox);
+    newDiv_userBox.appendChild(newDiv_favoriteClickArea);
     let newDiv_favoriteStar = document.createElement("div");
     newDiv_favoriteStar.className = "favoriteStar isNotFavorite";
+    newDiv_favoriteClickArea.appendChild(newDiv_favoriteStar);
+    newDiv_favoriteClickArea.addEventListener("click", () => {
+        newDiv_favoriteStar.classList.toggle("isNotFavorite");
+        newDiv_favoriteStar.classList.toggle("isFavorite");
+    })
+
+
 
     textInput.value = "";
 })
+
 
