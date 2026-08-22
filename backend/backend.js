@@ -6,7 +6,7 @@ app.use(express.json());
 
 //checking, make one if its not there
 if (!fs.existsSync("./data/data.json")){
-    let data = [];
+    let data = []
     fs.writeFileSync("./data/data.json", JSON.stringify(data));
 } 
 
@@ -18,7 +18,11 @@ app.post("/users", (req, res) => {
     let data = JSON.parse(fs.readFileSync("./data/data.json"));
     let newData = req.body;
     //put inside
-    newData.id = data[data.length - 1].id + 1;
+    if (data.length > 0){
+        newData.id = data[data.length - 1].id + 1;
+    } else {
+        newData.id = 1;
+    }
     data.push(newData);
     //rewrite
     fs.writeFileSync("./data/data.json", JSON.stringify(data));

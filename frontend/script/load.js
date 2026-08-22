@@ -20,25 +20,14 @@ window.addEventListener("load", async () => {
             //if theres something, render it
             renderData(allData);
             console.log("rendering")
-        }  else {
-            createNoUserText();
-        }
+        }  
         statusText.innerText = "member loaded";
         memberCounter.innerText = allData.length;
     } catch (error){
         console.log("server currently inactive")
         subtitle.innerText = "Server inactive, could not fetch member(s) data";
-        createNoUserText();
     }   
 })
-
-function createNoUserText(){
-    let newP_noUser = document.createElement("p");
-    let newText = document.createTextNode("No member yet...");
-    newP_noUser.id = "noUser";
-    newP_noUser.appendChild(newText);
-    userArea.appendChild(newP_noUser); 
-}
 
 function renderData(data){
     userArea.innerHTML = "";
@@ -90,7 +79,15 @@ function renderData(data){
             newDiv_favoriteStar.className = "favoriteStar isNotFavorite";
         }
         newDiv_favoriteClickArea.appendChild(newDiv_favoriteStar);
+        let isFavorite = false;
         newDiv_favoriteClickArea.addEventListener("click", () => {
+            if (isFavorite){
+                isFavorite = false;
+                favoriteCounter.innerText = Number(favoriteCounter.innerText) - 1;
+            } else {
+                isFavorite = true;
+                favoriteCounter.innerText = Number(favoriteCounter.innerText) + 1;
+            }
             newDiv_favoriteStar.classList.toggle("isNotFavorite");
             newDiv_favoriteStar.classList.toggle("isFavorite");
         })

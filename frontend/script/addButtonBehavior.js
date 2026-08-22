@@ -2,10 +2,6 @@ addButton.addEventListener("click", () => {
 
     let nameValue = textInput.value; //before it gets deleted;
 
-    if (noUser){ //just in case if the thing still exist, it will now cease to exist when adding
-        noUser.remove();
-    }
-
     let newDiv_userBox = document.createElement("div");
     newDiv_userBox.className = "userBox";
     userArea.appendChild(newDiv_userBox);
@@ -73,7 +69,15 @@ addButton.addEventListener("click", () => {
     let newDiv_favoriteStar = document.createElement("div");
     newDiv_favoriteStar.className = "favoriteStar isNotFavorite";
     newDiv_favoriteClickArea.appendChild(newDiv_favoriteStar);
+    let isFavorite = false;
     newDiv_favoriteClickArea.addEventListener("click", () => {
+        if (isFavorite){
+            isFavorite = false;
+            favoriteCounter.innerText = Number(favoriteCounter.innerText) - 1;
+        } else {
+            isFavorite = true;
+            favoriteCounter.innerText = Number(favoriteCounter.innerText) + 1;
+        }
         newDiv_favoriteStar.classList.toggle("isNotFavorite");
         newDiv_favoriteStar.classList.toggle("isFavorite");
     })

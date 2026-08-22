@@ -2,7 +2,7 @@
 let userArea = document.getElementById("userArea");
 let addButton = document.getElementById("addButton");
 let textInput = document.getElementById("textInput");
-let noUser = document.getElementById("noUser");
 let memberCounter = document.getElementById("memberCounter");
+let favoriteCounter = document.getElementById("favoriteCounter");
 
 
