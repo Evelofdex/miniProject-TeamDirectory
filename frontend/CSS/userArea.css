@@ -98,7 +98,13 @@
 .favoriteStar{
     width: 20px;
     height: 20px;
-
+}
+.isFavorite{
+    background-image: url("../svg/star_yellow.svg");
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+.isNotFavorite{
     background-image: url("../svg/star_grey.svg");
     background-size: 20px;
     background-repeat: no-repeat;
