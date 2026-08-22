@@ -78,7 +78,7 @@ addButton.addEventListener("click", () => {
         newDiv_favoriteStar.classList.toggle("isFavorite");
     })
 
-        
+    memberCounter.innerText = Number(memberCounter.innerText) + 1;
     textInput.value = "";
 })
 
